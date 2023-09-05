@@ -8,13 +8,13 @@ struct bst
 
 BST* empty_bst()
 {
-    BST* bst = (BST*)malloc(sizeof(BST));
+    BST bst = (BST)malloc(sizeof(BST));
     bst->key = NULL;
     bst->left = NULL;
     bst->right = NULL;
 }
 
-void insert_key(KEY key, BST* bst)
+void insert_key(KEY key, BST bst)
 {
     if (bst == NULL)
     {
@@ -51,7 +51,7 @@ void insert_key(KEY key, BST* bst)
     }
 }
 
-void erase_bst(BST* bst)
+void erase_bst(BST bst)
 {
     if (bst == NULL)
     {
@@ -62,4 +62,14 @@ void erase_bst(BST* bst)
     free(bst->key);
     free(bst->left);
     free(bst->right);
+}
+
+int bst_height(BST bst)
+{
+    return bst_height2(bst, 0);
+}
+
+int bst_height2(BST bst, int currentSize)
+{
+    // TODO
 }
